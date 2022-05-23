@@ -1,0 +1,13 @@
+body{
+    background-color: lightgoldenrodyellow;
+}
+
+#pageTitle{
+    padding: 20px;
+    text-align: center;
+}
+
+#pageTitle span{
+    width: 80%;
+}
+
