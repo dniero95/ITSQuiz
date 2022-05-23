@@ -24,15 +24,15 @@
           <a href="#" class="list-group-item list-group-item-action active" aria-current="true">
             Argomenti
           </a>
-          <a href="#" class="list-group-item list-group-item-action">01-javascript</a>
-          <a href="#" class="list-group-item list-group-item-action">02-variables-and-operators</a>
-          <a href="#" class="list-group-item list-group-item-action">03-functions</a>
-          <a href="#" class="list-group-item list-group-item-action">04-flow</a>
-          <a href="#" class="list-group-item list-group-item-action">05-strings</a>
-          <a href="#" class="list-group-item list-group-item-action">06-arrays</a>
-          <a href="#" class="list-group-item list-group-item-action">07-objects</a>
-          <a href="#" class="list-group-item list-group-item-action">08-timing</a>
-          <a href="#" class="list-group-item list-group-item-action">09-DOM</a>
+          <a href="#01" class="list-group-item list-group-item-action">01-javascript</a>
+          <a href="#02" class="list-group-item list-group-item-action">02-variables-and-operators</a>
+          <a href="#03" class="list-group-item list-group-item-action">03-functions</a>
+          <a href="#04" class="list-group-item list-group-item-action">04-flow</a>
+          <a href="#05" class="list-group-item list-group-item-action">05-strings</a>
+          <a href="#06" class="list-group-item list-group-item-action">06-arrays</a>
+          <a href="#07" class="list-group-item list-group-item-action">07-objects</a>
+          <a href="#08" class="list-group-item list-group-item-action">08-timing</a>
+          <a href="#09" class="list-group-item list-group-item-action">09-DOM</a>
         </div>
         <!-- end of aside -->
 
@@ -40,7 +40,10 @@
       
       <div id="questionsContainer" class="col-9">
         <!-- start of questions -->
-      
+        <a name = "01"></a>
+        <div class="alert alert-dark" role="alert">
+          01-javascript
+        </div>
         <div class="card">
           <h5 class="card-header">Domanda 1</h5>
           <div class="card-body">
@@ -54,7 +57,7 @@
               </label>
             </div>
             <div class="form-check">
-              <input class="form-check-input" type="radio" name="flexRadioDefault" id="flexRadioDefault2" >
+              <input id = "a-q-1" class="form-check-input" type="radio" name="flexRadioDefault" id="flexRadioDefault2" >
               <label class="form-check-label" for="flexRadioDefault2">
                 #Risposta 2
               </label>
@@ -71,7 +74,8 @@
                 #Risposta 4
               </label>
             </div>
-            <a class="btn btn-primary">Verifica</a>
+            <a class="btn btn-primary" onclick="checkAnswer()">Verifica</a>
+            <div id="result1"></div>
           </div>
         </div>
       
@@ -142,8 +146,39 @@
             <a class="btn btn-primary">Verifica</a>
           </div>
         </div>
-      
-        <!-- start of questions -->
+        <a name = "02"></a>
+        <div class="alert alert-dark" role="alert">
+          02-variables-and-operators
+        </div>
+        <a name = "03"></a>
+        <div class="alert alert-dark" role="alert">
+          03-functions
+        </div>
+        <a name = "04"></a>
+        <div class="alert alert-dark" role="alert">
+          04-flow
+        </div>
+        <a name = "05"></a>
+        <div class="alert alert-dark" role="alert">
+          05-strings
+        </div>
+        <a name = "06"></a>
+        <div class="alert alert-dark" role="alert">
+          06-arrays
+        </div>
+        <a name = "07"></a>
+        <div class="alert alert-dark" role="alert">
+          07-objects
+        </div>
+        <a name = "08"></a>
+        <div class="alert alert-dark" role="alert">
+          08-timing
+        </div>
+        <a name = "09"></a>
+        <div class="alert alert-dark" role="alert">
+          09-DOM
+        </div>
+        <!-- end of questions -->
 
 
       </div>
@@ -155,6 +190,9 @@
 
 
     <!-- end of body -->
+
+    <!-- personal js -->
+    <script src="js/main.js"></script>
 
     <!-- Optional JavaScript; choose one of the two! -->
 
