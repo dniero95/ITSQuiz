@@ -1,0 +1,293 @@
+[
+    {
+        "question": "Git is a version control system for tracking changes in source code.",
+        "answer": true,
+        "type": "tf",
+        "source": "ChatGPT",
+        "subject": "git"
+    },
+    {
+        "question": "GitHub is a proprietary web-based platform.",
+        "answer": false,
+        "type": "tf",
+        "source": "ChatGPT",
+        "subject": "git"
+    },
+    {
+        "question": "A Git repository can only be stored on a local machine.",
+        "answer": false,
+        "type": "tf",
+        "source": "ChatGPT",
+        "subject": "git"
+    },
+    {
+        "question": "The git init command is used to clone a repository.",
+        "answer": false,
+        "type": "tf",
+        "source": "ChatGPT",
+        "subject": "git"
+    },
+    {
+        "question": "The git checkout command is used to switch branches.",
+        "answer": true,
+        "type": "tf",
+        "source": "ChatGPT",
+        "subject": "git"
+    },
+    {
+        "question": "Git stores a complete history of every file in a repository.",
+        "answer": true,
+        "type": "tf",
+        "source": "ChatGPT",
+        "subject": "git"
+    },
+    {
+        "question": "The git merge command is used to combine changes from multiple branches.",
+        "answer": true,
+        "type": "tf",
+        "source": "ChatGPT",
+        "subject": "git"
+    },
+    {
+        "question": "The git push command is used to download changes from a remote repository.",
+        "answer": false,
+        "type": "tf",
+        "source": "ChatGPT",
+        "subject": "git"
+    },
+    {
+        "question": "A Git branch can only be deleted if it has been merged into another branch.",
+        "answer": true,
+        "type": "tf",
+        "source": "ChatGPT",
+        "subject": "git"
+    },
+    {
+        "question": "Git can only be used with text files.",
+        "answer": false,
+        "type": "tf",
+        "source": "ChatGPT",
+        "subject": "git"
+    },
+    {
+        "question": "The git pull command is used to upload changes to a remote repository.",
+        "answer": false,
+        "type": "tf",
+        "source": "ChatGPT",
+        "subject": "git"
+    },
+    {
+        "question": "Git repositories can be easily hosted on a variety of services.",
+        "answer": true,
+        "type": "tf",
+        "source": "ChatGPT",
+        "subject": "git"
+    },
+    {
+        "question": "The git commit command is used to discard changes.",
+        "answer": false,
+        "type": "tf",
+        "source": "ChatGPT",
+        "subject": "git"
+    },
+    {
+        "question": "Git supports collaboration with other developers.",
+        "answer": true,
+        "type": "tf",
+        "subject": "git"
+    },
+    {
+        "question": "Git tracks file changes at the whole project level.",
+        "answer": true,
+        "type": "tf",
+        "source": "ChatGPT",
+        "subject": "git"
+    },
+    {
+        "question": "Git is a centralized version control system.",
+        "answer": false,
+        "type": "tf",
+        "source": "ChatGPT",
+        "subject": "git"
+    },
+    {
+        "question": "Git stores only the differences between versions of a file.",
+        "answer": true,
+        "type": "tf",
+        "source": "ChatGPT",
+        "subject": "git"
+    },
+    {
+        "question": "Git allows to rollback to a previous version of a project.",
+        "answer": true,
+        "type": "tf",
+        "source": "ChatGPT",
+        "subject": "git"
+    },
+    {
+        "question": "Git is the only version control system available.",
+        "answer": false,
+        "type": "tf",
+        "source": "ChatGPT",
+        "subject": "git"
+    },
+    {
+        "question": "Git requires an internet connection to work.",
+        "answer": false,
+        "type": "tf",
+        "source": "ChatGPT",
+        "subject": "git"
+    },
+    {
+        "question": "Git stores the entire history of a project.",
+        "answer": true,
+        "type": "tf",
+        "source": "ChatGPT",
+        "subject": "git"
+    },
+    {
+        "question": "Git can track changes in binary files.",
+        "answer": true,
+        "type": "tf",
+        "source": "ChatGPT",
+        "subject": "git"
+    },
+    {
+        "question": "Git is limited to software development projects.",
+        "answer": false,
+        "type": "tf",
+        "source": "ChatGPT",
+        "subject": "git"
+    },
+    {
+        "question": "Git is an open-source tool.",
+        "answer": true,
+        "type": "tf",
+        "source": "ChatGPT",
+        "subject": "git"
+    },
+    {
+        "question": "GitHub is a closed-source version control system.",
+        "answer": false,
+        "type": "tf",
+        "source": "ChatGPT",
+        "subject": "git"
+    },
+    {
+        "question": "GitHub is a platform for sharing and collaborating on Git repositories.",
+        "answer": true,
+        "type": "tf",
+        "source": "ChatGPT",
+        "subject": "git"
+    },
+    {
+        "question": "GitHub is a proprietary tool.",
+        "answer": false,
+        "type": "tf",
+        "source": "ChatGPT",
+        "subject": "git"
+    },
+    {
+        "question": "GitHub only provides hosting for Git repositories.",
+        "answer": false,
+        "type": "tf",
+        "subject": "git"
+    },
+    {
+        "question": "What does Git stand for?",
+        "answers": [
+            "Graphical Interface Tool",
+            "Git Intelligent Transfer",
+            "Global Information Tracker",
+            "GNU Interactive Tool"
+        ],
+        "answer": 4,
+        "type": "mc",
+        "source": "ChatGPT"
+    },
+    {
+        "question": "What is the primary purpose of GitHub?",
+        "answers": [
+            "A social media platform",
+            "A code hosting platform",
+            "An online marketplace for software",
+            "A tool for managing software licenses"
+        ],
+        "answer": 2,
+        "type": "mc",
+        "source": "ChatGPT"
+    },
+    {
+        "question": "What is a Git repository?",
+        "answers": [
+            "A database of all changes made to a project",
+            "A platform for managing software licenses",
+            "A collection of configuration files",
+            "A network of Git servers"
+        ],
+        "answer": 1,
+        "type": "mc",
+        "source": "ChatGPT"
+    },
+    {
+        "question": "What is the purpose of a Git commit?",
+        "answers": [
+            "To upload changes to a remote repository",
+            "To save changes to the local repository",
+            "To revert the code to a previous version",
+            "To merge multiple branches"
+        ],
+        "answer": 2,
+        "type": "mc",
+        "source": "ChatGPT"
+    },
+    {
+        "question": "What is the purpose of a Git push?",
+        "answers": [
+            "To download changes from a remote repository",
+            "To upload changes to a remote repository",
+            "To discard changes in the local repository",
+            "To compare changes between branches"
+        ],
+        "answer": 2,
+        "type": "mc",
+        "source": "ChatGPT"
+    },
+    {
+        "question": "What is a Git pull?",
+        "answers": [
+            "To upload changes to a remote repository",
+            "To download changes from a remote repository",
+            "To discard changes in the local repository",
+            "To compare changes between branches"
+        ],
+        "answer": 2,
+        "type": "mc",
+        "source": "ChatGPT"
+    },
+    {
+        "question": "What is a Git branch?",
+        "answers": [
+            "A version of the code in a Git repository",
+            "A network of Git servers",
+            "A collection of configuration files",
+            "A parallel version of the code in a Git repository"
+        ],
+        "answer": 4,
+        "type": "mc",
+        "source": "ChatGPT"
+    },
+    {
+        "question": "What is a Git merge?",
+        "answers": [
+            "A process to upload changes to a remote repository",
+            "A process to compare changes between branches",
+            "A process to combine changes from multiple branches into one branch",
+            "A process to discard changes"
+        ],
+        "answer": 3,
+        "type": "mc",
+        "subject": "git",
+        "source": "ChatGPT"
+    }
+]
