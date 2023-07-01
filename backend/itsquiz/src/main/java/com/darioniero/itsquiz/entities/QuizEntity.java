@@ -33,7 +33,8 @@ public class QuizEntity {
     @Column(nullable = false)
     private String course;
 
-    @OneToMany(mappedBy = "quizID", cascade = CascadeType.ALL, orphanRemoval = true)
+    @OneToMany
+    @JoinColumn(name = "questionID")
     private List<QuestionEntity> questions = new ArrayList<>();
 
 }

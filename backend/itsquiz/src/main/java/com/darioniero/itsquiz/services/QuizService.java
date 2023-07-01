@@ -75,6 +75,7 @@ public class QuizService {
                 .numberOfQuestions(quizEntity.getNumberOfQuestions())
                 .duration(quizEntity.getDuration())
                 .course(quizEntity.getCourse())
+                .questions(quizEntity.getQuestions())
                 .build();
     }
 

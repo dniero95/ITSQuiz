@@ -20,6 +20,7 @@ public class QuestionEntity {
     @Column(nullable = false)
     private Long quizID;
 
-    @OneToMany(mappedBy = "questionID", cascade = CascadeType.ALL, orphanRemoval = true)
-    private List<AnswerEntity> questions = new ArrayList<>();
+    @OneToMany
+    @JoinColumn(name = "answerID")
+    private List<AnswerEntity> answers = new ArrayList<>();
 }
