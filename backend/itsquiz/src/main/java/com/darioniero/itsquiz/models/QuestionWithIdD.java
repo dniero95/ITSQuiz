@@ -10,7 +10,6 @@ import lombok.experimental.SuperBuilder;
 @AllArgsConstructor
 @NoArgsConstructor
 @SuperBuilder
-public class Question {
-    private String text;
-    private Long quizID;
+public class QuestionWithIdD {
+    Long id;
 }
