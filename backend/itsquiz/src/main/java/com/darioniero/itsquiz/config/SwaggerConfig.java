@@ -9,11 +9,11 @@ import org.springframework.context.annotation.Configuration;
 
 @OpenAPIDefinition
 @Configuration
-public class SpringdocConfig {
+public class SwaggerConfig {
 
     @Bean
     public OpenAPI baseOpenAPI(){
-                return new OpenAPI().info(new Info().title("Films API")
+                return new OpenAPI().info(new Info().title("Quizzes API")
                 .version("1.0.0").description("API to use the ITSQUiz platform"));
     }
 }
