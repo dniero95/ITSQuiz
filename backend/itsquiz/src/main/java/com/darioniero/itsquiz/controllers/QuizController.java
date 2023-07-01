@@ -25,5 +25,10 @@ public class QuizController {
         return quizService.fetchAllQuiz();
     }
 
+    @PutMapping
+    public void updateQuiz(Long id, @RequestBody Quiz quiz){
+        quizService.updateQuiz(id, quiz);
+    }
+
 
 }

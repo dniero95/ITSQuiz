@@ -9,6 +9,7 @@ import org.springframework.stereotype.Service;
 
 import java.util.ArrayList;
 import java.util.List;
+import java.util.Optional;
 
 @Service
 public class QuizService {
@@ -55,4 +56,17 @@ public class QuizService {
     }
 
 
+    public void updateQuiz(Long id, Quiz quiz) {
+        Optional<QuizEntity>  quizToUpdate =  quizRepository.findById(id);
+
+        if (quizToUpdate.isPresent()){
+            quizToUpdate.get().setName(quiz.getName());
+            quizToUpdate.get().setDescription(quiz.getDescription());
+            quizToUpdate.get().setNumberOfQuestions(quiz.getNumberOfQuestions());
+            quizToUpdate.get().setDuration(quiz.getDuration());
+            quizToUpdate.get().setCourse(quiz.getCourse());
+
+            quizRepository.save(quizToUpdate.get());
+        }
+    }
 }
