@@ -10,6 +10,6 @@ import lombok.experimental.SuperBuilder;
 @AllArgsConstructor
 @NoArgsConstructor
 @SuperBuilder
-public class QuestionWithIdD {
+public class QuestionWithIdD extends Question{
     Long id;
 }
