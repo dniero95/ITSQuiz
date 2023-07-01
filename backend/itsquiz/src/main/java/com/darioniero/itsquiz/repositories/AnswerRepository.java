@@ -1,4 +1,7 @@
 package com.darioniero.itsquiz.repositories;
 
-public interface AnswerRepository {
+import com.darioniero.itsquiz.entities.AnswerEntity;
+import org.springframework.data.repository.CrudRepository;
+
+public interface AnswerRepository extends CrudRepository<AnswerEntity, Long> {
 }
