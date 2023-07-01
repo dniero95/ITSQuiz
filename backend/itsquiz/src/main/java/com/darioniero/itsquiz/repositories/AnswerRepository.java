@@ -1,2 +1,4 @@
-package com.darioniero.itsquiz.repositories;public interface AnswerRepository {
+package com.darioniero.itsquiz.repositories;
+
+public interface AnswerRepository {
 }
