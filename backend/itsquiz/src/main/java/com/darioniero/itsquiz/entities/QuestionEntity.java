@@ -3,6 +3,9 @@ package com.darioniero.itsquiz.entities;
 import jakarta.persistence.*;
 import lombok.*;
 
+import java.util.ArrayList;
+import java.util.List;
+
 @Entity
 @NoArgsConstructor
 @AllArgsConstructor
@@ -16,4 +19,7 @@ public class QuestionEntity {
     private String text;
     @Column(nullable = false)
     private Long quizID;
+
+    @OneToMany(mappedBy = "questionID", cascade = CascadeType.ALL, orphanRemoval = true)
+    private List<AnswerEntity> questions = new ArrayList<>();
 }
