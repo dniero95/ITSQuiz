@@ -18,26 +18,6 @@ public class QuizService {
     QuizRepository quizRepository;
 
 
-    private QuizEntity fromQuizToQuizEntity(Quiz quiz) {
-        return QuizEntity.builder()
-                .name(quiz.getName())
-                .description(quiz.getDescription())
-                .numberOfQuestions(quiz.getNumberOfQuestions())
-                .duration(quiz.getDuration())
-                .course(quiz.getCourse())
-                .build();
-    }
-
-    private QuizWithID fromQuizEntityToQuizWithID(QuizEntity quizEntity) {
-        return QuizWithID.builder()
-                .id(quizEntity.getId())
-                .name(quizEntity.getName())
-                .description(quizEntity.getDescription())
-                .numberOfQuestions(quizEntity.getNumberOfQuestions())
-                .duration(quizEntity.getDuration())
-                .course(quizEntity.getCourse())
-                .build();
-    }
 
 
     public void createQuiz(Quiz quiz) {
@@ -73,9 +53,29 @@ public class QuizService {
 
     public void deleteQuizById(Long id) {
         Optional<QuizEntity> quizToDelete = (quizRepository.findById(id));
-        if (quizToDelete.isPresent()) {
-            quizRepository.delete(quizToDelete.get());
-        }
+        quizToDelete.ifPresent(quizEntity -> quizRepository.delete(quizEntity));
 
     }
+
+    private QuizEntity fromQuizToQuizEntity(Quiz quiz) {
+        return QuizEntity.builder()
+                .name(quiz.getName())
+                .description(quiz.getDescription())
+                .numberOfQuestions(quiz.getNumberOfQuestions())
+                .duration(quiz.getDuration())
+                .course(quiz.getCourse())
+                .build();
+    }
+
+    private QuizWithID fromQuizEntityToQuizWithID(QuizEntity quizEntity) {
+        return QuizWithID.builder()
+                .id(quizEntity.getId())
+                .name(quizEntity.getName())
+                .description(quizEntity.getDescription())
+                .numberOfQuestions(quizEntity.getNumberOfQuestions())
+                .duration(quizEntity.getDuration())
+                .course(quizEntity.getCourse())
+                .build();
+    }
+
 }

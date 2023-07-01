@@ -20,6 +20,12 @@ public class QuestionService {
         questionRepository.save(fromQuestionToQuestionEntity(question));
     }
 
+    public void updateQuestion(Long id, Question question) {
+    }
+
+    public void deleteQuestionByID(long id) {
+    }
+
     private QuestionEntity fromQuestionToQuestionEntity(Question question) {
         return QuestionEntity.builder()
                 .text(question.getText())
@@ -34,5 +40,7 @@ public class QuestionService {
                 .quizID(questionEntity.getQuizID())
                 .build();
     }
+
+
 
 }
