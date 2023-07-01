@@ -1,2 +1,4 @@
-package com.darioniero.itsquiz.models;public class Quiz {
+package com.darioniero.itsquiz.models;
+
+public class Quiz {
 }
