@@ -3,12 +3,14 @@ package com.darioniero.itsquiz.entities;
 import jakarta.persistence.*;
 import lombok.AllArgsConstructor;
 import lombok.Builder;
+import lombok.Data;
 import lombok.NoArgsConstructor;
 
 @Entity
 @NoArgsConstructor
 @AllArgsConstructor
 @Builder
+@Data
 public class QuizEntity {
 
     @Id
