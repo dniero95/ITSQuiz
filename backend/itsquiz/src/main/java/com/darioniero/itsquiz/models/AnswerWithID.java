@@ -1,7 +1,6 @@
 package com.darioniero.itsquiz.models;
 
 import lombok.AllArgsConstructor;
-import lombok.Builder;
 import lombok.Data;
 import lombok.NoArgsConstructor;
 import lombok.experimental.SuperBuilder;
@@ -10,6 +9,6 @@ import lombok.experimental.SuperBuilder;
 @AllArgsConstructor
 @NoArgsConstructor
 @SuperBuilder
-public class QuestionWithIdD extends Question{
-    private Long id;
+public class AnswerWithID extends Answer{
+    Long id;
 }
