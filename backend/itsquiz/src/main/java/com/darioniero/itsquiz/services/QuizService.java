@@ -39,6 +39,9 @@ public class QuizService {
     }
 
 
+    public void createQuiz(Quiz quiz) {
+        quizRepository.save(fromQuizToQuizEntity(quiz));
+    }
     public List<Quiz> fetchAllQuiz() {
 
         List<Quiz> quizzes = new ArrayList<>();
@@ -50,4 +53,6 @@ public class QuizService {
 
         return quizzes;
     }
+
+
 }
