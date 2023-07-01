@@ -30,5 +30,9 @@ public class QuizController {
         quizService.updateQuiz(id, quiz);
     }
 
+    @DeleteMapping
+    public void deleteQuizById(Long id){
+        quizService.deleteQuizById(id);
+    }
 
 }

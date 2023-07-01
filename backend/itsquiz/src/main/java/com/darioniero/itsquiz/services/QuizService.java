@@ -43,6 +43,7 @@ public class QuizService {
     public void createQuiz(Quiz quiz) {
         quizRepository.save(fromQuizToQuizEntity(quiz));
     }
+
     public List<QuizWithID> fetchAllQuiz() {
 
         List<QuizWithID> quizzes = new ArrayList<>();
@@ -57,9 +58,9 @@ public class QuizService {
 
 
     public void updateQuiz(Long id, Quiz quiz) {
-        Optional<QuizEntity>  quizToUpdate =  quizRepository.findById(id);
+        Optional<QuizEntity> quizToUpdate = quizRepository.findById(id);
 
-        if (quizToUpdate.isPresent()){
+        if (quizToUpdate.isPresent()) {
             quizToUpdate.get().setName(quiz.getName());
             quizToUpdate.get().setDescription(quiz.getDescription());
             quizToUpdate.get().setNumberOfQuestions(quiz.getNumberOfQuestions());
@@ -68,5 +69,13 @@ public class QuizService {
 
             quizRepository.save(quizToUpdate.get());
         }
+    }
+
+    public void deleteQuizById(Long id) {
+        Optional<QuizEntity> quizToDelete = (quizRepository.findById(id));
+        if (quizToDelete.isPresent()) {
+            quizRepository.delete(quizToDelete.get());
+        }
+
     }
 }
