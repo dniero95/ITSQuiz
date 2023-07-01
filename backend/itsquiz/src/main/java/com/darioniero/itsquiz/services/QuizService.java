@@ -2,6 +2,7 @@ package com.darioniero.itsquiz.services;
 
 import com.darioniero.itsquiz.entities.QuizEntity;
 import com.darioniero.itsquiz.models.Quiz;
+import com.darioniero.itsquiz.models.QuizWithID;
 import com.darioniero.itsquiz.repositories.QuizRepository;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
@@ -18,7 +19,6 @@ public class QuizService {
 
     private QuizEntity fromQuizToQuizEntity(Quiz quiz) {
         return QuizEntity.builder()
-                .id(quiz.getId())
                 .name(quiz.getName())
                 .description(quiz.getDescription())
                 .numberOfQuestions(quiz.getNumberOfQuestions())
@@ -27,8 +27,8 @@ public class QuizService {
                 .build();
     }
 
-    private Quiz fromQuizEntityToQuiz(QuizEntity quizEntity) {
-        return Quiz.builder()
+    private QuizWithID fromQuizEntityToQuizWithID(QuizEntity quizEntity) {
+        return QuizWithID.builder()
                 .id(quizEntity.getId())
                 .name(quizEntity.getName())
                 .description(quizEntity.getDescription())
@@ -42,13 +42,13 @@ public class QuizService {
     public void createQuiz(Quiz quiz) {
         quizRepository.save(fromQuizToQuizEntity(quiz));
     }
-    public List<Quiz> fetchAllQuiz() {
+    public List<QuizWithID> fetchAllQuiz() {
 
-        List<Quiz> quizzes = new ArrayList<>();
+        List<QuizWithID> quizzes = new ArrayList<>();
 
         for (QuizEntity quizEntity :
                 quizRepository.findAll()) {
-            quizzes.add(fromQuizEntityToQuiz(quizEntity));
+            quizzes.add(fromQuizEntityToQuizWithID(quizEntity));
         }
 
         return quizzes;

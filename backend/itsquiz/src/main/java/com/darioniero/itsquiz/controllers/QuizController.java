@@ -1,6 +1,7 @@
 package com.darioniero.itsquiz.controllers;
 
 import com.darioniero.itsquiz.models.Quiz;
+import com.darioniero.itsquiz.models.QuizWithID;
 import com.darioniero.itsquiz.services.QuizService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.*;
@@ -20,7 +21,9 @@ public class QuizController {
     }
 
     @GetMapping
-    public List<Quiz> fetchAllQuiz(){
+    public List<QuizWithID> fetchAllQuiz(){
         return quizService.fetchAllQuiz();
     }
+
+
 }
