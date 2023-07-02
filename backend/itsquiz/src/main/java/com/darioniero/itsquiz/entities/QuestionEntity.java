@@ -1,5 +1,6 @@
 package com.darioniero.itsquiz.entities;
 
+import com.darioniero.itsquiz.models.Answer;
 import jakarta.persistence.*;
 import lombok.*;
 
@@ -25,3 +26,5 @@ public class QuestionEntity {
     @JoinColumn(name = "question_id")
     private List<AnswerEntity> answers = new ArrayList<>();
 }
+
+
