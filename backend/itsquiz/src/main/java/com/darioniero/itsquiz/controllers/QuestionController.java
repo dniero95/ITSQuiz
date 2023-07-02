@@ -31,7 +31,7 @@ public class QuestionController {
     }
 
     @PutMapping
-    public void updateQuetion(Long id, @RequestBody Question question){
+    public void updateQuestion(Long id, @RequestBody Question question){
      questionService.updateQuestion(id, question);
     }
 

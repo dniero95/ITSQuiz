@@ -11,6 +11,7 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
 import java.util.List;
+import java.util.Optional;
 
 @Service
 public class QuestionService {
@@ -26,10 +27,14 @@ public class QuestionService {
         questionRepository.save(fromQuestionToQuestionEntity(question));
     }
 
+    public List<QuestionEntity> fetchAllQuestions() {
+        return (List<QuestionEntity>) questionRepository.findAll();
+    }
     public void updateQuestion(Long id, Question question) {
     }
 
     public void deleteQuestionByID(long id) {
+        questionRepository.deleteById(id);
     }
 
     private QuestionEntity fromQuestionToQuestionEntity(Question question) {
@@ -48,7 +53,5 @@ public class QuestionService {
     }
 
 
-    public List<QuestionEntity> fetchAllQuestions() {
-        return (List<QuestionEntity>) questionRepository.findAll();
-    }
+
 }
