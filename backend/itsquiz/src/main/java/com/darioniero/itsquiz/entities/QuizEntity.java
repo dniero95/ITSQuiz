@@ -12,6 +12,7 @@ import java.util.List;
 @Builder
 @Getter
 @Setter
+@Table(name = "quiz")
 public class QuizEntity {
 
     @Id
