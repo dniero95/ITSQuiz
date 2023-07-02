@@ -35,7 +35,7 @@ public class QuizEntity {
     private String course;
 
     @OneToMany
-    @JoinColumn(name = "questionID")
+    @JoinColumn(name = "quiz_id")
     private List<QuestionEntity> questions = new ArrayList<>();
 
 }

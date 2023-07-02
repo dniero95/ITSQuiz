@@ -14,12 +14,13 @@ public class AnswerEntity {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Long id;
-    @Column(nullable = false)
+
+    @Column( name = "text",nullable = false)
     private String text;
-    @Column(nullable = false)
+    @Column(name = "is_true",nullable = false)
     private boolean isTrue;
-    @Column(nullable = false)
+    @Column(name = "point",nullable = false)
     private int point;
-    @Column(nullable = false)
+    @Column(name = "question_id",nullable = false)
     private Long questionID;
 }
