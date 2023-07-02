@@ -20,10 +20,18 @@ public class QuestionService {
         this.questionRepository = questionRepository;
     }
 
+    /**
+     * Create a new question in the database
+     * @param question The question that will be created
+     */
     public void createQuestion(Question question) {
         questionRepository.save(fromQuestionToQuestionEntity(question));
     }
 
+    /**
+     * Return all questions in the database
+     * @return
+     */
     public List<QuestionWithIdD> fetchAllQuestions() {
         List<QuestionWithIdD> questions = new ArrayList<>();
 
@@ -33,6 +41,11 @@ public class QuestionService {
         return questions;
     }
 
+    /**
+     * Update a question on the database
+     * @param id the id of the question that will be updated
+     * @param question The new fields of the question that will be updated
+     */
     public void updateQuestion(Long id, Question question) {
         Optional<QuestionEntity> questionToUpdate = questionRepository.findById(id);
         if (questionToUpdate.isPresent()) {
@@ -42,10 +55,19 @@ public class QuestionService {
         }
     }
 
+    /**
+     * delete a question in the database
+     * @param id the id of the question that will be deleted
+     */
     public void deleteQuestionByID(long id) {
         questionRepository.deleteById(id);
     }
 
+    /**
+     * convert a Question model to a question entity
+     * @param question
+     * @return the question Entity
+     */
     private QuestionEntity fromQuestionToQuestionEntity(Question question) {
         return QuestionEntity.builder()
                 .text(question.getText())
@@ -53,6 +75,11 @@ public class QuestionService {
                 .build();
     }
 
+    /**
+     * convert a question entity to a QuestionWithID model
+     * @param questionEntity
+     * @return
+     */
     private QuestionWithIdD fromQuestionEntityToQuestionWithID(QuestionEntity questionEntity) {
         return QuestionWithIdD.builder()
                 .id(questionEntity.getId())
