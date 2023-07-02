@@ -62,4 +62,8 @@ public class AnswerService {
             answerRepository.save(answerToUpdate.get());
         }
     }
+
+    public void deleteAnswerByID(Long id) {
+        answerRepository.deleteById(id);
+    }
 }

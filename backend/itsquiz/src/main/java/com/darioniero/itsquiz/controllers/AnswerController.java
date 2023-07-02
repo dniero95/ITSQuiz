@@ -29,4 +29,9 @@ public class AnswerController {
     public void updateAnswer(Long id, @RequestBody Answer answer){
         answerService.updateAnswer(id, answer);
     }
+
+    @DeleteMapping
+    public void deleteAnswerByID(Long id){
+        answerService.deleteAnswerByID(id);
+    }
 }
