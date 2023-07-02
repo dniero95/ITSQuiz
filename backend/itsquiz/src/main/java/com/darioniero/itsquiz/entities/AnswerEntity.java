@@ -1,5 +1,6 @@
 package com.darioniero.itsquiz.entities;
 
+import com.darioniero.itsquiz.models.Answer;
 import jakarta.persistence.*;
 import lombok.*;
 
@@ -24,3 +25,5 @@ public class AnswerEntity {
     @Column(name = "question_id",nullable = false)
     private Long questionID;
 }
+
+
