@@ -12,6 +12,7 @@ import java.util.List;
 @AllArgsConstructor
 @Builder
 @Getter
+@Setter
 @Table(name = "question")
 public class QuestionEntity {
     @Id

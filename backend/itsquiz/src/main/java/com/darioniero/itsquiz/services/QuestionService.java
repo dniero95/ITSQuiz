@@ -31,6 +31,12 @@ public class QuestionService {
         return (List<QuestionEntity>) questionRepository.findAll();
     }
     public void updateQuestion(Long id, Question question) {
+        Optional<QuestionEntity> questionToUpdate = questionRepository.findById(id);
+        if (questionToUpdate.isPresent()){
+            questionToUpdate.get().setText(question.getText());
+            questionToUpdate.get().setQuizID(question.getQuizID());
+            questionRepository.save(questionToUpdate.get());
+        }
     }
 
     public void deleteQuestionByID(long id) {
