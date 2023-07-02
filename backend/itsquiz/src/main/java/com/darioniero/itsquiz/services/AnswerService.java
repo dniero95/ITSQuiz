@@ -9,6 +9,7 @@ import org.springframework.stereotype.Service;
 
 import java.util.ArrayList;
 import java.util.List;
+import java.util.Optional;
 
 @Service
 public class AnswerService {
@@ -48,5 +49,17 @@ public class AnswerService {
                 .isTrue(answerEntity.isTrue())
                 .questionID(answerEntity.getQuestionID())
                 .build();
+    }
+
+    public void updateAnswer(Long id, Answer answer) {
+        Optional<AnswerEntity> answerToUpdate = answerRepository.findById(id);
+        if (answerToUpdate.isPresent()){
+            answerToUpdate.get().setPoint(answer.getPoint());
+            answerToUpdate.get().setTrue (answer.isTrue());
+            answerToUpdate.get().setText(answer.getText());
+            answerToUpdate.get().setQuestionID (answer.getQuestionID());
+
+            answerRepository.save(answerToUpdate.get());
+        }
     }
 }

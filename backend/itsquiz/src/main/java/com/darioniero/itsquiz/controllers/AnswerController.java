@@ -24,4 +24,9 @@ public class AnswerController {
     public List<AnswerWithID> fetchAllAnswers(){
         return answerService.fetchAllAnswers();
     }
+
+    @PutMapping
+    public void updateAnswer(Long id, @RequestBody Answer answer){
+        answerService.updateAnswer(id, answer);
+    }
 }

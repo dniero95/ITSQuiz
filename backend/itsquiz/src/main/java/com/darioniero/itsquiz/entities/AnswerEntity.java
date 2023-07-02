@@ -9,6 +9,7 @@ import lombok.*;
 @AllArgsConstructor
 @Builder
 @Getter
+@Setter
 @Table(name = "answer")
 public class AnswerEntity {
 
