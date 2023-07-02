@@ -18,8 +18,6 @@ public class QuizService {
     QuizRepository quizRepository;
 
 
-
-
     public void createQuiz(Quiz quiz) {
         quizRepository.save(fromQuizToQuizEntity(quiz));
     }
@@ -28,8 +26,7 @@ public class QuizService {
 
         List<QuizWithID> quizzes = new ArrayList<>();
 
-        for (QuizEntity quizEntity :
-                quizRepository.findAll()) {
+        for (QuizEntity quizEntity : quizRepository.findAll()) {
             quizzes.add(fromQuizEntityToQuizWithID(quizEntity));
         }
 
