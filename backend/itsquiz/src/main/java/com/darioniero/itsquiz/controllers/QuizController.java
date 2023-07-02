@@ -12,8 +12,11 @@ import java.util.List;
 @RestController
 public class QuizController {
 
-    @Autowired
-    private QuizService quizService;
+    private final QuizService quizService;
+
+    public QuizController(QuizService quizService) {
+        this.quizService = quizService;
+    }
 
     @PostMapping
     public void createQuiz(@RequestBody Quiz quiz){

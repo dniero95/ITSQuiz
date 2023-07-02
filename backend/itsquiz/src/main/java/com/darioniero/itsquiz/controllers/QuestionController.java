@@ -12,8 +12,12 @@ import java.util.List;
 @RequestMapping("/api/question")
 public class QuestionController {
 
-    @Autowired
+    final
     QuestionService questionService;
+
+    public QuestionController(QuestionService questionService) {
+        this.questionService = questionService;
+    }
 
 
     @PostMapping

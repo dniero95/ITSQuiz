@@ -14,8 +14,12 @@ import java.util.Optional;
 @Service
 public class QuizService {
 
-    @Autowired
+    final
     QuizRepository quizRepository;
+
+    public QuizService(QuizRepository quizRepository) {
+        this.quizRepository = quizRepository;
+    }
 
 
     public void createQuiz(Quiz quiz) {

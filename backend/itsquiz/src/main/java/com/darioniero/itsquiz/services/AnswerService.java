@@ -14,8 +14,12 @@ import java.util.Optional;
 @Service
 public class AnswerService {
 
-    @Autowired
+    final
     AnswerRepository answerRepository;
+
+    public AnswerService(AnswerRepository answerRepository) {
+        this.answerRepository = answerRepository;
+    }
 
     public void createAnswer(Answer answer) {
         AnswerEntity toSave = fromAnswerToAnswerEntity(answer);

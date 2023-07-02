@@ -12,8 +12,12 @@ import java.util.List;
 @RequestMapping("/api/answer")
 public class AnswerController {
 
-    @Autowired
+    final
     AnswerService answerService;
+
+    public AnswerController(AnswerService answerService) {
+        this.answerService = answerService;
+    }
 
     @PostMapping
     public void createAnswer(@RequestBody Answer answer){
