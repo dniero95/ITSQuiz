@@ -2,6 +2,7 @@ package com.darioniero.itsquiz.controllers;
 
 import com.darioniero.itsquiz.entities.QuestionEntity;
 import com.darioniero.itsquiz.models.Question;
+import com.darioniero.itsquiz.models.QuestionWithIdD;
 import com.darioniero.itsquiz.services.QuestionService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.*;
@@ -26,7 +27,7 @@ public class QuestionController {
     }
 
     @GetMapping
-    public List<QuestionEntity> fetchAllQuestions(){
+    public List<QuestionWithIdD> fetchAllQuestions(){
         return questionService.fetchAllQuestions();
     }
 

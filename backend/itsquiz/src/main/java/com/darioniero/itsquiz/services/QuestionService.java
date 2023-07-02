@@ -1,15 +1,12 @@
 package com.darioniero.itsquiz.services;
 
 import com.darioniero.itsquiz.entities.QuestionEntity;
-import com.darioniero.itsquiz.entities.QuizEntity;
 import com.darioniero.itsquiz.models.Question;
 import com.darioniero.itsquiz.models.QuestionWithIdD;
-import com.darioniero.itsquiz.models.Quiz;
-import com.darioniero.itsquiz.models.QuizWithID;
 import com.darioniero.itsquiz.repositories.QuestionRepository;
-import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
+import java.util.ArrayList;
 import java.util.List;
 import java.util.Optional;
 
@@ -27,12 +24,18 @@ public class QuestionService {
         questionRepository.save(fromQuestionToQuestionEntity(question));
     }
 
-    public List<QuestionEntity> fetchAllQuestions() {
-        return (List<QuestionEntity>) questionRepository.findAll();
+    public List<QuestionWithIdD> fetchAllQuestions() {
+        List<QuestionWithIdD> questions = new ArrayList<>();
+
+        for (QuestionEntity questionEntity : questionRepository.findAll()) {
+            questions.add(fromQuestionEntityToQuestionWithID(questionEntity));
+        }
+        return questions;
     }
+
     public void updateQuestion(Long id, Question question) {
         Optional<QuestionEntity> questionToUpdate = questionRepository.findById(id);
-        if (questionToUpdate.isPresent()){
+        if (questionToUpdate.isPresent()) {
             questionToUpdate.get().setText(question.getText());
             questionToUpdate.get().setQuizID(question.getQuizID());
             questionRepository.save(questionToUpdate.get());
@@ -55,9 +58,9 @@ public class QuestionService {
                 .id(questionEntity.getId())
                 .text(questionEntity.getText())
                 .quizID(questionEntity.getQuizID())
+                .answers(questionEntity.getAnswers())
                 .build();
     }
-
 
 
 }
