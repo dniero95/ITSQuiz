@@ -1,0 +1,23 @@
+
+nav.navbar{
+    padding: 10px;
+    margin: 10px;
+    border-radius: 5px;
+    background: var(--primary-color);
+    
+    a {
+        padding: 5px;
+        margin-right: 20px;
+        
+
+        
+    }
+
+    a:hover, a:active{
+        color: var(--accent-color);
+        border: solid 2px var(--accent-color);
+        border-radius: 5px;
+        font-weight: bolder;
+    }
+}
+
