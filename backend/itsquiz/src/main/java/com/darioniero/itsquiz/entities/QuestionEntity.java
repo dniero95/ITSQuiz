@@ -16,12 +16,12 @@ public class QuestionEntity {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Long id;
-    @Column(nullable = false)
+    @Column(name = "text",nullable = false)
     private String text;
-    @Column(nullable = false)
+    @Column(name="quiz_id",nullable = false)
     private Long quizID;
 
     @OneToMany
-    @JoinColumn(name = "answerID")
+    @JoinColumn(name = "question_id")
     private List<AnswerEntity> answers = new ArrayList<>();
 }
