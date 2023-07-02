@@ -4,7 +4,6 @@ import com.darioniero.itsquiz.entities.AnswerEntity;
 import com.darioniero.itsquiz.models.Answer;
 import com.darioniero.itsquiz.models.AnswerWithID;
 import com.darioniero.itsquiz.repositories.AnswerRepository;
-import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
 import java.util.ArrayList;
@@ -21,11 +20,19 @@ public class AnswerService {
         this.answerRepository = answerRepository;
     }
 
+    /**
+     * save an answer on the database
+     * @param answer
+     */
     public void createAnswer(Answer answer) {
         AnswerEntity toSave = fromAnswerToAnswerEntity(answer);
         answerRepository.save(toSave);
     }
 
+    /**
+     * return all answer
+     * @return
+     */
     public List<AnswerWithID> fetchAllAnswers() {
 
         List<AnswerWithID> answers = new ArrayList<>();
@@ -37,6 +44,11 @@ public class AnswerService {
         return answers;
     }
 
+    /**
+     * convert an Answer model to an Answer entity
+     * @param answer
+     * @return
+     */
     private AnswerEntity fromAnswerToAnswerEntity(Answer answer) {
         return AnswerEntity.builder()
                 .text(answer.getText())
@@ -45,6 +57,12 @@ public class AnswerService {
                 .questionID(answer.getQuestionID())
                 .build();
     }
+
+    /**
+     * convert a answer entity to an answer with id model
+     * @param answerEntity
+     * @return
+     */
     private AnswerWithID fromAnswerEntityToAnswerWithID(AnswerEntity answerEntity) {
         return AnswerWithID.builder()
                 .id(answerEntity.getId())

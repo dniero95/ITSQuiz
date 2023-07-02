@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: localhost:8889
--- Generation Time: Jul 02, 2023 at 11:50 AM
+-- Generation Time: Jul 02, 2023 at 10:23 PM
 -- Server version: 5.7.34
 -- PHP Version: 7.4.21
 
@@ -31,10 +31,20 @@ CREATE TABLE `answer` (
   `id` bigint(20) NOT NULL,
   `is_true` bit(1) NOT NULL,
   `point` int(11) NOT NULL,
-  `questionid` bigint(20) NOT NULL,
-  `text` varchar(255) NOT NULL,
-  `answerid` bigint(20) DEFAULT NULL
+  `question_id` bigint(20) NOT NULL,
+  `text` varchar(255) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8;
+
+--
+-- Dumping data for table `answer`
+--
+
+INSERT INTO `answer` (`id`, `is_true`, `point`, `question_id`, `text`) VALUES
+(1, b'0', 0, 1, 'demo answer 1'),
+(2, b'0', 0, 1, 'demo answer 2'),
+(3, b'0', 0, 1, 'demo answer 3'),
+(4, b'1', 1, 1, 'demo answer 4'),
+(5, b'0', 0, 2, 'demo answer for question 2');
 
 -- --------------------------------------------------------
 
@@ -44,10 +54,17 @@ CREATE TABLE `answer` (
 
 CREATE TABLE `question` (
   `id` bigint(20) NOT NULL,
-  `quizid` bigint(20) NOT NULL,
-  `text` varchar(255) NOT NULL,
-  `questionid` bigint(20) DEFAULT NULL
+  `quiz_id` bigint(20) NOT NULL,
+  `text` varchar(255) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8;
+
+--
+-- Dumping data for table `question`
+--
+
+INSERT INTO `question` (`id`, `quiz_id`, `text`) VALUES
+(1, 1, 'Demo question 1'),
+(2, 1, 'demo question 2');
 
 -- --------------------------------------------------------
 
@@ -69,7 +86,7 @@ CREATE TABLE `quiz` (
 --
 
 INSERT INTO `quiz` (`id`, `course`, `description`, `duration`, `name`, `number_of_questions`) VALUES
-(1, 'Demo Course', 'A demo quiz to test the application', 15, 'Demo Quiz', 5);
+(1, 'Demo', 'A demo quiz for test the app', 20, 'Demo Quiz', 10);
 
 --
 -- Indexes for dumped tables
@@ -80,14 +97,14 @@ INSERT INTO `quiz` (`id`, `course`, `description`, `duration`, `name`, `number_o
 --
 ALTER TABLE `answer`
   ADD PRIMARY KEY (`id`),
-  ADD KEY `FKo51fwsocd53sv7seljkq1lxct` (`answerid`);
+  ADD KEY `FK8frr4bcabmmeyyu60qt7iiblo` (`question_id`);
 
 --
 -- Indexes for table `question`
 --
 ALTER TABLE `question`
   ADD PRIMARY KEY (`id`),
-  ADD KEY `FKnat000fl6g1s70wk7a3lnx0ar` (`questionid`);
+  ADD KEY `FKb0yh0c1qaxfwlcnwo9dms2txf` (`quiz_id`);
 
 --
 -- Indexes for table `quiz`
@@ -103,13 +120,13 @@ ALTER TABLE `quiz`
 -- AUTO_INCREMENT for table `answer`
 --
 ALTER TABLE `answer`
-  MODIFY `id` bigint(20) NOT NULL AUTO_INCREMENT;
+  MODIFY `id` bigint(20) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=7;
 
 --
 -- AUTO_INCREMENT for table `question`
 --
 ALTER TABLE `question`
-  MODIFY `id` bigint(20) NOT NULL AUTO_INCREMENT;
+  MODIFY `id` bigint(20) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=3;
 
 --
 -- AUTO_INCREMENT for table `quiz`
@@ -125,14 +142,13 @@ ALTER TABLE `quiz`
 -- Constraints for table `answer`
 --
 ALTER TABLE `answer`
-  ADD CONSTRAINT `FKceabpalho8033paobymscy2b2` FOREIGN KEY (`answerid`) REFERENCES `question_entity` (`id`),
-  ADD CONSTRAINT `FKo51fwsocd53sv7seljkq1lxct` FOREIGN KEY (`answerid`) REFERENCES `question` (`id`);
+  ADD CONSTRAINT `FK8frr4bcabmmeyyu60qt7iiblo` FOREIGN KEY (`question_id`) REFERENCES `question` (`id`);
 
 --
 -- Constraints for table `question`
 --
 ALTER TABLE `question`
-  ADD CONSTRAINT `FKnat000fl6g1s70wk7a3lnx0ar` FOREIGN KEY (`questionid`) REFERENCES `quiz` (`id`);
+  ADD CONSTRAINT `FKb0yh0c1qaxfwlcnwo9dms2txf` FOREIGN KEY (`quiz_id`) REFERENCES `quiz` (`id`);
 COMMIT;
 
 /*!40101 SET CHARACTER_SET_CLIENT=@OLD_CHARACTER_SET_CLIENT */;
