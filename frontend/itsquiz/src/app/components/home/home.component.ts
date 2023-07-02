@@ -7,4 +7,6 @@ import { Component } from '@angular/core';
 })
 export class HomeComponent {
 
+  quizzes:string[] = ["quiz finale", "version control", "java"];
+
 }
